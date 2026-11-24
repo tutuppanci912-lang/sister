@@ -14,6 +14,8 @@ class DayRecord {
   String? masuk; // "HH:mm"
   String? pulang;
   String? status; // Tepat Waktu | Terlambat
+  String? lokasiMasuk; // "lat, lng" saat presensi masuk
+  String? lokasiPulang;
 }
 
 class IzinItem {
@@ -87,18 +89,20 @@ class AppState extends ChangeNotifier {
   }
 
   /// Mencatat presensi masuk, lalu pulang. Mengembalikan pesan untuk pengguna.
-  String presensi() {
+  String presensi({String? lokasi}) {
     final now = DateTime.now();
     final rec = riwayat.putIfAbsent(dateKey(now), () => DayRecord());
     final jam = '${two(now.hour)}:${two(now.minute)}';
     String msg;
     if (rec.masuk == null) {
       rec.masuk = jam;
+      rec.lokasiMasuk = lokasi;
       final telat = now.hour > 7 || (now.hour == 7 && now.minute > 15);
       rec.status = telat ? 'Terlambat' : 'Tepat Waktu';
       msg = 'Presensi masuk berhasil pukul $jam';
     } else if (rec.pulang == null) {
       rec.pulang = jam;
+      rec.lokasiPulang = lokasi;
       msg = 'Presensi pulang berhasil pukul $jam';
     } else {
       msg = 'Presensi hari ini sudah lengkap';

@@ -13,7 +13,7 @@ const _semuaMapel = [
   _Mapel('BJ', 'BAHASA JAWA', 'DYAN KARTIKAWATI, S.Pd', Color(0xFF4A55B8)),
   _Mapel('BK', 'BIMBINGAN KONSELING', 'ABDI SHOLIH PRATAMA, S.Pd', Color(0xFF1F7ACB)),
   _Mapel('B.\nJEPANG', 'B. JEPANG', 'IMAM MAULANA BURHANNUDIEN, S.Pd', Color(0xFF6B4A3F)),
-  _Mapel('KIK', 'KREATIVITAS, INOVASI, DAN KEWIRAUSAHAAN', '', Color(0xFF2E8B57)),
+  _Mapel('KIK', 'KREATIVITAS, INOVASI, DAN KEWIRAUSAHAAN', 'Anjar Pamungkast, S.Pd', Color(0xFF2E8B57)),
 ];
 
 class LmsTab extends StatefulWidget {

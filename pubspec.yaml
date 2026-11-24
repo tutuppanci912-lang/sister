@@ -5,11 +5,13 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-
+  
 dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  permission_handler: ^13.0.2
+  location: ^10.0.2
 
 dev_dependencies:
   flutter_test:
